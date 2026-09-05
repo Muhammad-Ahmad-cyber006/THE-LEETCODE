@@ -3,7 +3,7 @@ class Solution
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
     {
-        //brute froce
+
         int i=0;
         vector<int> result;
         while(i<nums.size())
