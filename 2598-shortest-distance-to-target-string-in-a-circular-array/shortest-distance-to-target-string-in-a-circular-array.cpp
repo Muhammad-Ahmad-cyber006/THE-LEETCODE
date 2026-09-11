@@ -46,6 +46,12 @@ public:
                 break;
             }
         }
+        if(c1 == -1)
+            return c2;
+
+        if(c2 == -1)
+            return c1;
+
 
         // Dono directions ki minimum distance
         return min(c1,c2);
