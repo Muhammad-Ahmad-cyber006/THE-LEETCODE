@@ -5,6 +5,7 @@ public:
         int cs=0;
         int ms=INT_MIN;
         int mins=INT_MAX;
+        //max subarray
         for(int i=0;i<nums.size();i++){
             cs+=nums[i];
             ms=max(ms,cs);
@@ -13,6 +14,7 @@ public:
                 cs=0;
             }
         }
+        //min subarray
         cs=0;
             for(int i=0;i<nums.size();i++){
             cs+=nums[i];
