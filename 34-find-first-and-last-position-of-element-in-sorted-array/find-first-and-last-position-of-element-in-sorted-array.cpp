@@ -10,7 +10,10 @@ public:
             int mid=left+(right-left)/2;
             if(nums[mid]>=target) 
             {
-                if(nums[mid]==target) first=mid;
+                if(nums[mid]==target) 
+                {
+                    first=mid;
+                }    
 
                 right=mid-1;
             } 
@@ -26,7 +29,10 @@ public:
             int mid=left+(right-left)/2;
             if(nums[mid]<=target) 
             {
-                if(nums[mid]==target) last=mid;
+                if(nums[mid]==target) 
+                {
+                    last=mid;
+                }    
 
                 left=mid+1;
             }
