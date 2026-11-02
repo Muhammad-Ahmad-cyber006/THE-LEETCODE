@@ -35,24 +35,41 @@ public:
 
     //bottom up+greedy
 
-    int minSteps(int n)
-    {
-        int t[1001];
-        t[0]=0,t[1]=0,t[2]=2;
-        for(int i=3;i<=n;i++){
-            int factor=i/2;
-            while(factor>=1)
+    // int minSteps(int n)
+    // {
+    //     int t[1001];
+    //     t[0]=0,t[1]=0,t[2]=2;
+    //     for(int i=3;i<=n;i++){
+    //         int factor=i/2;
+    //         while(factor>=1)
+    //         {
+    //             if(i%factor==0){
+    //             int y=t[factor];
+    //             int copy=1;
+    //             int paste=(i/factor)-1;
+    //             t[i]=y+copy+paste;
+    //             break;
+    //             }
+    //             else factor--;
+    //         }
+    //     }
+    //     return t[n];
+    // }
+    //prime factorzation
+    int minSteps(int n) {
+        int ans=0;
+
+        for(int i=2;i*i<=n;i++) 
+        {
+            while(n%i==0) 
             {
-                if(i%factor==0){
-                int y=t[factor];
-                int copy=1;
-                int paste=(i/factor)-1;
-                t[i]=y+copy+paste;
-                break;
-                }
-                else factor--;
+                ans+=i;
+                n/=i;
             }
         }
-        return t[n];
+
+        if(n>1) ans+=n;
+
+        return ans;
     }
 };
